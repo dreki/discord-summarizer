@@ -1,31 +1,39 @@
 {
-  "name": "discord-summarizer",
-  "displayName": "Discord summarizer",
-  "version": "1.0.0",
-  "description": "Summarizes unread Discord messages",
-  "author": "Sean Gilbertson",
-  "scripts": {
-    "dev": "plasmo dev",
-    "build": "plasmo build",
-    "test": "plasmo test"
-  },
-  "dependencies": {
-    "plasmo": "0.82.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "4.1.0",
-    "@types/chrome": "0.0.241",
-    "@types/node": "20.4.2",
-    "@types/react": "18.2.15",
-    "@types/react-dom": "18.2.7",
-    "prettier": "3.0.0",
-    "typescript": "5.1.6"
-  },
-  "manifest": {
-    "host_permissions": [
-      "https://*/*"
-    ]
-  }
+    "name": "discord-summarizer",
+    "displayName": "Discord Summarizer",
+    "version": "1.0.0",
+    "description": "Summarizes unread Discord messages",
+    "author": "Sean Gilbertson",
+    "scripts": {
+        "dev": "plasmo dev",
+        "build": "plasmo build",
+        "test": "plasmo test"
+    },
+    "dependencies": {
+        "@plasmohq/messaging": "^0.5.0",
+        "plasmo": "0.82.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
+    "devDependencies": {
+        "@ianvs/prettier-plugin-sort-imports": "4.1.0",
+        "@tailwindcss/typography": "^0.5.9",
+        "@types/chrome": "0.0.241",
+        "@types/node": "20.4.2",
+        "@types/react": "18.2.15",
+        "@types/react-dom": "18.2.7",
+        "autoprefixer": "^10.4.14",
+        "postcss": "^8.4.27",
+        "prettier": "^3.0.0",
+        "tailwindcss": "^3.3.3",
+        "typescript": "5.1.6"
+    },
+    "manifest": {
+        "host_permissions": [
+            "https://discord.com/*"
+        ],
+        "permissions": [
+            "webRequest"
+        ]
+    }
 }
