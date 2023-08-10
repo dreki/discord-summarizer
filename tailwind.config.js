@@ -3,5 +3,5 @@ module.exports = {
     mode: "jit",
     darkMode: "class",
     content: ["./**/*.tsx"],
-    plugins: [require("@tailwindcss/typography")]
+    plugins: [require("@tailwindcss/typography"), require("daisyui")]
 }
