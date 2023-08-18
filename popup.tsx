@@ -1,29 +1,20 @@
-import { useState } from "react"
+import { useCallback, useState } from "react"
 
 import "./style.css"
 
 function IndexPopup() {
     const [data, setData] = useState("")
 
+    const summarizeCallback = useCallback(async () => {}, [])
+
     return (
-        <div
-            style={{
-                display: "flex",
-                flexDirection: "column",
-                padding: 16
-            }} className="prose">
-            <h2>
-                Welcome to your
-                <a href="https://www.plasmo.com" target="_blank">
-                    {" "}
-                    Plasmo
-                </a>{" "}
-                Extension!
-            </h2>
-            <input onChange={(e) => setData(e.target.value)} value={data} />
-            <a href="https://docs.plasmo.com" target="_blank">
-                View Docs
-            </a>
+        <div className="container prose m-4" style={{ width: "26rem" }}>
+            <h1 className="text-lg">Discord Summarizer</h1>
+            <div className="form-control mt-4">
+                <button onClick={summarizeCallback} className="btn btn-primary btn-sm max-w-min">
+                    Summarize
+                </button>
+            </div>
         </div>
     )
 }
