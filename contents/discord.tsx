@@ -1,5 +1,6 @@
 import { PlasmoCSConfig } from "plasmo"
 import { useCallback } from "react"
+import { createRoot } from "react-dom/client"
 
 import "../style.css"
 
@@ -11,17 +12,13 @@ import SummarizeModal from "~components/SummarizeModal"
 const selector = '[data-list-id="recents"]'
 
 function Summarize(): JSX.Element {
-    const summarizeCallback = useCallback(async () => {
-        // console.log("> Summarize!")
-        window.summarize_modal.showModal()
-    }, [])
-
     return (
         <>
             <div className="form-control ml-4 mt-3">
-                <button onClick={summarizeCallback} className="btn btn-primary btn-sm max-w-min">
+                <label htmlFor="summarize_modal" className="btn btn-primary btn-sm max-w-min">Summarize</label>
+                {/* <button onClick={summarizeCallback} className="btn btn-primary btn-sm max-w-min">
                     Summarize
-                </button>
+                </button> */}
             </div>
             <SummarizeModal />
         </>
@@ -33,10 +30,8 @@ function Summarize(): JSX.Element {
 const interval = setInterval(() => {
     const element = document.querySelector(selector)
     if (element) {
-        console.log("Element found:", element)
         // If the element exists, return.
         if (document.getElementById("summarize_button")) {
-            console.log("Element already exists.")
             return
         }
 
@@ -44,7 +39,8 @@ const interval = setInterval(() => {
         const div = document.createElement("div")
         div.id = "summarize_button"
         element.prepend(div)
-        ReactDOM.render(<Summarize />, div)
+        // Create root
+        createRoot(div).render(<Summarize />)
     }
 }, 500)
 
