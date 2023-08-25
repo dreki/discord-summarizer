@@ -8,13 +8,15 @@ console.log("> background script loaded");
 // Intercept web responses
 chrome.webRequest.onCompleted.addListener(
     (details) => {
-        console.log(`> details for ${details.url}:`)
+        console.log(`> chrome.webRequest.onCompleted: details for ${details.url}:`)
         console.log(details)
         // debugger;
         // console.log(`> details: ${JSON.stringify(details)}`)
     }
     ,
     // { urls: ["https://discord.com/api/v9/channels/*/messages*"] }
+
+    // https://discord.com/api/v9/channels/626866757038112768/messages?limit=50&around=1141906598038605895
     { urls: ["https://discord.com/api/*/messages*"] },
     ["responseHeaders"]
 );
